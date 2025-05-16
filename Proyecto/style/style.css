@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'ORBITRON';
+    src: url('../fonts/Orbitron-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
+*{
+    font-family: 'ORBITRON';
+}  
+/* Fondo general */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff073a, #00b0ff); /* rojo neón a azul */
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor del visor 3D */
+.sketchfab-embed-wrapper {
+    width: 100%;
+    max-width: 1920px;
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.4);
+    border-radius: 15px;
+    overflow: hidden;
+    z-index: -999;
+    filter: saturate(1.5);
+}
+
+.botonInicio{
+    z-index: 1;
+    position: absolute;
+    top: 70%;
+    width: 10vw;
+    height: 5vh;
+    border-radius: 10px;
+    left: 50%;
+}
+.f1{
+    z-index: 1;
+    position: absolute;
+    filter: saturate(0.2);
+    left: 28%;
+    top: 0%;
+}
+.boton{
+    z-index: 11;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
+.piloto {
+    z-index: 12;
+    position: relative;
+    top: 50%;
+    right: 40%;
+    width: 30vw;
+    border-radius: 20%;
+    
+}
+.administrador{
+    z-index: 12;
+    position: absolute;
+    bottom: 0%;
+    left: 40%;
+    width: 30vw;
+    border-radius: 20%;
+}
+.botonAdministrador{
+    z-index: 12;
+    position: relative;
+
+}
+.botonUsuario{
+    z-index: 13;
+    position: relative;
+    right: 100%;
+}
