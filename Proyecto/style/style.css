@@ -15,9 +15,11 @@ body {
     background: linear-gradient(135deg, #ff073a, #00b0ff); /* rojo neón a azul */
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center; /* Centra el fondo */
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden; /* Evita el scrolling */
 }
 
 /* Contenedor del visor 3D */
@@ -32,27 +34,40 @@ body {
 }
 
 .botonInicio{
-    z-index: 1;
+    z-index: 10; /* Mayor z-index para estar por encima del logo */
     position: absolute;
     top: 70%;
     width: 10vw;
     height: 5vh;
     border-radius: 10px;
     left: 50%;
+    transform: translateX(-50%); /* Centra horizontalmente */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
 }
+
 .f1{
-    z-index: 1;
+    z-index: 0; /* Menor z-index para estar detrás del botón */
     position: absolute;
     filter: saturate(0.2);
-    left: 28%;
-    top: 0%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Centra el logo */
+    max-width: 50%;
+    opacity: 0.7; /* Semi-transparente */
 }
+
 .boton{
     z-index: 11;
-    position: absolute;
-    top: 40%;
-    left: 40%;
+    position: relative; /* Cambiado de absolute a relative */
+    display: block;
+    text-align: center;
+    width: 100%;
 }
+
+/* El resto de los estilos se mantienen igual */
 .piloto {
     z-index: 12;
     position: relative;
@@ -79,4 +94,136 @@ body {
     z-index: 13;
     position: relative;
     right: 100%;
+}
+
+.botonVolver {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    font-family: 'ORBITRON';
+}
+
+#vista-usuario, #vista-admin {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.contenido-usuario, .contenido-admin {
+    width: 80%;
+    height: 70vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    overflow: auto;
+}
+
+/* Header styles */
+.f1-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(255, 0, 0, 0.5);
+    border-bottom: 2px solid #e10600;
+}
+
+.logo-container {
+    width: 80px;
+}
+
+.header-logo {
+    width: 100%;
+    height: auto;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav li {
+    margin: 0 20px;
+}
+
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'ORBITRON';
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #e10600;
+}
+
+.exit-link {
+    color: #e10600 !important;
+    font-weight: bold;
+}
+
+/* Background */
+.content-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/f1-race.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
+    z-index: -1;
+    filter: brightness(0.7);
+}
+
+/* Content sections */
+#vista-usuario {
+    width: 100%;
+    height: 100vh;
+    padding-top: 60px; /* Space for header */
+    color: white;
+}
+
+.contenido-usuario {
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.contenido-usuario section {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.contenido-usuario h2 {
+    color: #e10600;
+    font-family: 'ORBITRON';
+    border-bottom: 1px solid #e10600;
+    padding-bottom: 10px;
 }

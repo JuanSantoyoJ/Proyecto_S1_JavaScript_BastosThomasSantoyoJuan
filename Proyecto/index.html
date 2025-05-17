@@ -1,39 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>F1</title>
     <link rel="stylesheet" href="./style/style.css">
 </head>
-
 <body>
-    <div id="todo">
-        <div class="sketchfab-embed-wrapper"> <iframe title="" frameborder="0" allowfullscreen mozallowfullscreen="true"
-            webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
-            execution-while-out-of-viewport execution-while-not-rendered web-share width="1920" height="1280"
-            src="https://sketchfab.com/models/7929bd7771d8494eaf0eb31404e24bf6/embed?autostart=1&transparent=1">
-        </iframe>
-        <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a
-                href="https://sketchfab.com/3d-models/f1-2025-ferrari-sf-25-7929bd7771d8494eaf0eb31404e24bf6?utm_medium=embed&utm_campaign=share-popup&utm_content=7929bd7771d8494eaf0eb31404e24bf6"
-                target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> </a>
+    <!-- Initial screen with 3D model -->
+    <div id="inicio">
+        <div class="sketchfab-embed-wrapper">
+            <iframe title="Ferrari SF-25" frameborder="0" allowfullscreen mozallowfullscreen="true"
+                webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+                execution-while-out-of-viewport execution-while-not-rendered web-share width="1920" height="1080"
+                src="https://sketchfab.com/models/7929bd7771d8494eaf0eb31404e24bf6/embed?autostart=1&transparent=1">
+            </iframe>
+            <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+                <a href="https://sketchfab.com/3d-models/f1-2025-ferrari-sf-25-7929bd7771d8494eaf0eb31404e24bf6?utm_medium=embed&utm_campaign=share-popup&utm_content=7929bd7771d8494eaf0eb31404e24bf6"
+                    target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">
+                </a>
+            </p>
+        </div>
+
+        <button class="botonInicio" onclick="mostrarOtroContenido()">
+            <a class="boton">LOGIN</a>
+        </button>
+        <img src="./img/f1" alt="F1 Logo" class="f1">
     </div>
-        <div id="inicio">
-            <img src="./img/f1" alt="" class="f1">
-            <button onclick="mostrarOtroContenido()" class="botonInicio">Login
-                <a href=""></a>
-            </button>
-        </div>
-        <div id="nuevo-contenido" style="display: none;" class="boton">
-            <img class="piloto" src="./img/piloto.jpg" alt="">
-            <img class="administrador" src="./img/mattia-binotto-team-principal--1.jpg" alt="">
-            
-            <button class="botonAdministrador">Administrador</button>
+
+    <!-- User selection screen -->
+    <div id="nuevo-contenido" style="display: none;">
+        <div class="seleccion-usuario">
+            <img src="./img/piloto.jpg" alt="Piloto" class="piloto">
             <button class="botonUsuario">User</button>
+            
+            <img src="./img/mattia-binotto-team-principal--1.jpg" alt="Administrador" class="administrador">
+            <button class="botonAdministrador">Administrador</button>
         </div>
+        <button class="botonVolver" onclick="volver()">Volver</button>
+    </div>
+
+    <!-- User view -->
+<div id="vista-usuario" style="display: none;">
+    <header class="f1-header">
+        <div class="logo-container">
+            <img src="./img/f1-logo.png" alt="F1 Logo" class="header-logo">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#equipos">Equipos</a></li>
+                <li><a href="#circuitos">Circuitos</a></li>
+                <li><a href="#vehiculos">Vehiculos</a></li>
+                <li><a href="#" onclick="volver()" class="exit-link">EXIT</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="content-background">
+        <!-- This div will have the background image of F1 cars -->
+    </div>
+    
+    <div class="contenido-usuario">
+        <section id="equipos" style="display: none;">
+            <h2>Equipos F1</h2>
+            <!-- Content for teams section -->
+        </section>
+        
+        <section id="circuitos" style="display: none;">
+            <h2>Circuitos</h2>
+            <!-- Content for circuits section -->
+        </section>
+        
+        <section id="vehiculos" style="display: none;">
+            <h2>Vehículos</h2>
+            <!-- Content for vehicles section -->
+        </section>
+    </div>
+</div>
+    <!-- Administrator view -->
+    <div id="vista-admin" style="display: none;">
+        <h1>Vista de Administrador</h1>
+        <div class="contenido-admin">
+            <!-- Aquí va el contenido para administradores -->
+        </div>
+        <button onclick="volver()">Volver al inicio</button>
     </div>
 </body>
 <script src="./scripts/script.js"></script>
-
+<script src="./scripts/inicio.js"></script>
+<script src="./scripts/usuario.js"></script>
+<script src="./scripts/administrador.js"></script>
 </html>
