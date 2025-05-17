@@ -73,10 +73,14 @@ body {
 .botonAdministrador{
     z-index: 12;
     position: relative;
-
+    border-radius: 30%;
+    background-color: red;
+    
 }
 .botonUsuario{
     z-index: 13;
     position: relative;
     right: 100%;
+    border-radius: 30%;
+    background-color: yellow;
 }
