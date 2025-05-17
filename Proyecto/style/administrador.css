@@ -1,9 +1,0 @@
-@font-face {
-    font-family: 'ORBITRON';
-    src: url('../fonts/Orbitron-Bold.ttf') format('truetype');
-    font-style: normal;
-    font-weight: normal;
-  }
-*{
-    font-family: 'ORBITRON';
-}  
