@@ -29,7 +29,7 @@
     </div>
 
     <!-- User selection screen -->
-<div id="nuevo-contenido" style="display: none;">
+<div id="nuevo-contenido">
     <div class="seleccion-usuario">
         <div class="usuario-opcion">
             <img src="./img/piloto.jpg" alt="Piloto" class="piloto">
@@ -48,13 +48,12 @@
 <div id="vista-usuario" style="display: none;">
     <header class="f1-header">
         <div class="logo-container">
-            <img src="./img/f1-logo.png" alt="F1 Logo" class="header-logo">
+            <img src="./img/f1" alt="F1 Logo" class="header-logo">
         </div>
         <nav class="main-nav">
             <ul>
-                <li><a href="#equipos">Equipos</a></li>
-                <li><a href="#circuitos">Circuitos</a></li>
-                <li><a href="#vehiculos">Vehiculos</a></li>
+                <li><a href="#comenzar-carrera">Comenzar carrera</a></li>
+                <li><a href="#informacion">Información</a></li>
                 <li><a href="#" onclick="volver()" class="exit-link">EXIT</a></li>
             </ul>
         </nav>
@@ -65,22 +64,18 @@
     </div>
     
     <div class="contenido-usuario">
-        <section id="equipos" style="display: none;">
-            <h2>Equipos F1</h2>
-            <!-- Content for teams section -->
+        <section id="comenzar-carrera" style="display: none;">
+            <h2>Comenzar carrera</h2>
+            <!-- Contenido para la sección de carrera -->
         </section>
         
-        <section id="circuitos" style="display: none;">
-            <h2>Circuitos</h2>
-            <!-- Content for circuits section -->
-        </section>
-        
-        <section id="vehiculos" style="display: none;">
-            <h2>Vehículos</h2>
-            <!-- Content for vehicles section -->
+        <section id="informacion" style="display: none;">
+            <h2>Información</h2>
+            <!-- Contenido para la sección de información -->
         </section>
     </div>
 </div>
+
     <!-- Administrator view -->
     <div id="vista-admin" style="display: none;">
         <h1>Vista de Administrador</h1>
