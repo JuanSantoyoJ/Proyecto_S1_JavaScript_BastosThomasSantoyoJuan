@@ -14,8 +14,17 @@ function mostrarVistaAdmin() {
 }
 
 function volver() {
+    document.getElementById('inicio').style.display = 'block';
     document.getElementById('nuevo-contenido').style.display = 'none';
     document.getElementById('vista-usuario').style.display = 'none';
     document.getElementById('vista-admin').style.display = 'none';
-    document.getElementById('inicio').style.display = 'block';
+    document.getElementById('registro-carrera').style.display = 'none';
+}
+
+function mostrarRegistroCarrera() {
+    document.getElementById('registro-carrera').style.display = 'block';
+}
+
+function cerrarRegistroCarrera() {
+    document.getElementById('registro-carrera').style.display = 'none';
 }

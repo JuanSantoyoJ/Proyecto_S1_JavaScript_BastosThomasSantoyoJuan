@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>F1</title>
     <link rel="stylesheet" href="./style/style.css">
 </head>
+
 <body>
     <!-- Initial screen with 3D model -->
     <div id="inicio">
@@ -29,52 +31,99 @@
     </div>
 
     <!-- User selection screen -->
-<div id="nuevo-contenido">
-    <div class="seleccion-usuario">
-        <div class="usuario-opcion">
-            <img src="./img/piloto.jpg" alt="Piloto" class="piloto">
-            <button class="botonUsuario">Usuario</button>
-        </div>
-        
-        <div class="admin-opcion">
-            <img src="./img/mattia-binotto-team-principal--1.jpg" alt="Administrador" class="administrador">
-            <button class="botonAdministrador">Administrador</button>
-        </div>
-    </div>
-    <button class="botonVolver" onclick="volver()">Volver</button>
-</div>
+    <div id="nuevo-contenido">
+        <div class="seleccion-usuario">
+            <div class="usuario-opcion">
+                <img src="./img/piloto.jpg" alt="Piloto" class="piloto">
+                <button class="botonUsuario">Usuario</button>
+            </div>
 
-    <!-- User view -->
-<div id="vista-usuario" style="display: none;">
-    <header class="f1-header">
-        <div class="logo-container">
-            <img src="./img/f1" alt="F1 Logo" class="header-logo">
+            <div class="admin-opcion">
+                <img src="./img/mattia-binotto-team-principal--1.jpg" alt="Administrador" class="administrador">
+                <button class="botonAdministrador">Administrador</button>
+            </div>
         </div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#comenzar-carrera">Comenzar carrera</a></li>
-                <li><a href="#informacion">Información</a></li>
-                <li><a href="#" onclick="volver()" class="exit-link">EXIT</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <div class="content-background">
-        <!-- This div will have the background image of F1 cars -->
+        <button class="botonVolver" onclick="volver()">Volver</button>
     </div>
-    
-    <div class="contenido-usuario">
-        <section id="comenzar-carrera" style="display: none;">
-            <h2>Comenzar carrera</h2>
-            <!-- Contenido para la sección de carrera -->
-        </section>
-        
-        <section id="informacion" style="display: none;">
-            <h2>Información</h2>
-            <!-- Contenido para la sección de información -->
-        </section>
+    <!-- User view -->
+    <div id="vista-usuario" style="display: none;">
+        <div class="user-bg"></div>
+        <header class="f1-header">
+            <div class="logo-container">
+                <img src="./img/f1" alt="F1 Logo" class="header-logo">
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#comenzar-carrera">Comenzar carrera</a></li>
+                    <li class="dropdown">
+                        <a href="#informacion" class="dropdown-toggle">Información</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#vehiculos" onclick="showSection('vehiculos')">Vehículos</a></li>
+                            <li><a href="#pilotos" onclick="showSection('pilotos')">Pilotos</a></li>
+                            <li><a href="#circuitos" onclick="showSection('circuitos')">Circuitos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" onclick="volver()" class="exit-link">EXIT</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content-background">
+            <!-- This div will have the background image of F1 cars -->
+        </div>
+
+        <div class="contenido-usuario">
+            <!-- Sección Comenzar Carrera (por defecto) -->
+            <section id="comenzar-carrera">
+                <h2 class="section-title">Comenzar Carrera</h2>
+            </section>
+
+            <!-- Sección Vehículos -->
+            <section id="vehiculos" style="display: none;">
+                <div class="section-header">
+                    <h2 class="section-title">Vehículos</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <!-- Contenido de vehículos aquí -->
+                <div class="content-placeholder">
+                    <section id="vehiculos">
+                        <h2>Vehículos</h2>
+                        <div id="lista-vehiculos"></div>
+                    </section>
+                </div>
+            </section>
+
+            <!-- Sección Pilotos -->
+            <section id="pilotos" style="display: none;">
+                <div class="section-header">
+                    <h2 class="section-title">Pilotos</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <!-- Contenido de pilotos aquí -->
+                <div class="content-placeholder">
+                    <section id="pilotos">
+                        <h2>Pilotos</h2>
+                        <div id="lista-pilotos"></div>
+                    </section>
+                </div>
+            </section>
+
+            <!-- Sección Circuitos -->
+            <section id="circuitos" style="display: none;">
+                <div class="section-header">
+                    <h2 class="section-title">Circuitos</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <!-- Contenido de circuitos aquí -->
+                <div class="content-placeholder">
+                    <section id="circuitos">
+                        <h2>Circuitos</h2>
+                        <div id="lista-circuitos"></div>
+                    </section>
+                </div>
+            </section>
+        </div>
     </div>
-</div>
 
     <!-- Administrator view -->
     <div id="vista-admin" style="display: none;">
@@ -89,4 +138,5 @@
 <script src="./scripts/inicio.js"></script>
 <script src="./scripts/usuario.js"></script>
 <script src="./scripts/administrador.js"></script>
+
 </html>
