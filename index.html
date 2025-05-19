@@ -2,122 +2,135 @@
 <html lang="en">
 
 <head>
+    <!-- Metadatos básicos de la página -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>F1</title>
+    <!-- Enlace al archivo CSS -->
     <link rel="stylesheet" href="./style/style.css">
 </head>
 
 <body>
-    <!-- Initial screen with 3D model -->
+    <!-- Pantalla inicial con modelo 3D de Sketchfab -->
     <div id="inicio">
         <div class="sketchfab-embed-wrapper">
+            <!-- Iframe del modelo 3D -->
             <iframe title="Ferrari SF-25" frameborder="0" allowfullscreen mozallowfullscreen="true"
                 webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
                 execution-while-out-of-viewport execution-while-not-rendered web-share width="1920" height="1080"
                 src="https://sketchfab.com/models/7929bd7771d8494eaf0eb31404e24bf6/embed?autostart=1&transparent=1">
             </iframe>
+            <!-- Pie de info (sin contenido) -->
             <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
-                <a href="https://sketchfab.com/3d-models/f1-2025-ferrari-sf-25-7929bd7771d8494eaf0eb31404e24bf6?utm_medium=embed&utm_campaign=share-popup&utm_content=7929bd7771d8494eaf0eb31404e24bf6"
-                    target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">
-                </a>
+                <a href="#" target="_blank" rel="nofollow"></a>
             </p>
         </div>
 
+        <!-- Botón para avanzar al login -->
         <button class="botonInicio" onclick="mostrarOtroContenido()">
             <a class="boton">LOGIN</a>
         </button>
+        <!-- Logo de F1 -->
         <img src="./img/f1" alt="F1 Logo" class="f1">
     </div>
 
-    <!-- User selection screen -->
+    <!-- Pantalla de selección de usuario o administrador -->
     <div id="nuevo-contenido">
         <div class="seleccion-usuario">
+            <!-- Opción de usuario -->
             <div class="usuario-opcion">
                 <img src="./img/piloto.jpg" alt="Piloto" class="piloto">
                 <button class="botonUsuario">Usuario</button>
             </div>
-
+            <!-- Opción de administrador -->
             <div class="admin-opcion">
                 <img src="./img/mattia-binotto-team-principal--1.jpg" alt="Administrador" class="administrador">
                 <button class="botonAdministrador">Administrador</button>
             </div>
         </div>
+        <!-- Botón para volver a la pantalla inicial -->
         <button class="botonVolver" onclick="volver()">Volver</button>
     </div>
-    <!-- User view -->
+
+    <!-- Vista de usuario (inicialmente oculta) -->
     <div id="vista-usuario" style="display: none;">
         <div class="user-bg"></div>
+
+        <!-- Encabezado con logo y menú de navegación -->
         <header class="f1-header">
             <div class="logo-container">
                 <img src="./img/f1" alt="F1 Logo" class="header-logo">
             </div>
             <nav class="main-nav">
                 <ul>
+                    <!-- Link para comenzar carrera -->
                     <li><a href="#comenzar-carrera">Comenzar carrera</a></li>
+                    <!-- Menú desplegable para información -->
                     <li class="dropdown">
                         <a href="#informacion" class="dropdown-toggle">Información</a>
                         <ul class="dropdown-menu">
+                            <!-- Links a las distintas secciones -->
                             <li><a href="#vehiculos" onclick="showSection('vehiculos')">Vehículos</a></li>
                             <li><a href="#pilotos" onclick="showSection('pilotos')">Pilotos</a></li>
                             <li><a href="#circuitos" onclick="showSection('circuitos')">Circuitos</a></li>
                         </ul>
                     </li>
+                    <!-- Link de salida -->
                     <li><a href="#" onclick="volver()" class="exit-link">EXIT</a></li>
                 </ul>
             </nav>
         </header>
 
-        <div class="content-background">
-            <!-- This div will have the background image of F1 cars -->
-        </div>
+        <!-- Fondo de contenido -->
+        <div class="content-background"></div>
 
+        <!-- Contenedor de contenido de usuario -->
         <div class="contenido-usuario">
-            <!-- Sección Comenzar Carrera (por defecto) -->
+            <!-- Sección Comenzar Carrera -->
             <section id="comenzar-carrera">
                 <h2 class="section-title">Comenzar Carrera</h2>
             </section>
 
-            <!-- Sección Vehículos -->
+            <!-- Sección Vehículos (inicialmente oculta) -->
             <section id="vehiculos" style="display: none;">
                 <div class="section-header">
                     <h2 class="section-title">Vehículos</h2>
                     <div class="section-divider"></div>
                 </div>
-                <!-- Contenido de vehículos aquí -->
                 <div class="content-placeholder">
                     <section id="vehiculos">
                         <h2>Vehículos</h2>
+                        <!-- Aquí se cargarán los vehículos desde la API -->
                         <div id="lista-vehiculos"></div>
                     </section>
                 </div>
             </section>
 
-            <!-- Sección Pilotos -->
+            <!-- Sección Pilotos (inicialmente oculta) -->
             <section id="pilotos" style="display: none;">
                 <div class="section-header">
                     <h2 class="section-title">Pilotos</h2>
                     <div class="section-divider"></div>
                 </div>
-                <!-- Contenido de pilotos aquí -->
                 <div class="content-placeholder">
                     <section id="pilotos">
                         <h2>Pilotos</h2>
+                        <!-- Aquí se cargarán los pilotos desde la API -->
                         <div id="lista-pilotos"></div>
                     </section>
                 </div>
             </section>
 
-            <!-- Sección Circuitos -->
+            <!-- Sección Circuitos (inicialmente oculta) -->
             <section id="circuitos" style="display: none;">
                 <div class="section-header">
                     <h2 class="section-title">Circuitos</h2>
                     <div class="section-divider"></div>
                 </div>
-                <!-- Contenido de circuitos aquí -->
                 <div class="content-placeholder">
                     <section id="circuitos">
                         <h2>Circuitos</h2>
+                        <!-- Aquí se cargarán los circuitos desde la API -->
                         <div id="lista-circuitos"></div>
                     </section>
                 </div>
@@ -125,15 +138,18 @@
         </div>
     </div>
 
-    <!-- Administrator view -->
+    <!-- Vista de administrador (inicialmente oculta) -->
     <div id="vista-admin" style="display: none;">
         <h1>Vista de Administrador</h1>
         <div class="contenido-admin">
-            <!-- Aquí va el contenido para administradores -->
+            <!-- Aquí irá el contenido exclusivo para administradores -->
         </div>
+        <!-- Botón para volver a la pantalla inicial -->
         <button onclick="volver()">Volver al inicio</button>
     </div>
 </body>
+
+<!-- Archivos de JavaScript -->
 <script src="./scripts/script.js"></script>
 <script src="./scripts/inicio.js"></script>
 <script src="./scripts/usuario.js"></script>
