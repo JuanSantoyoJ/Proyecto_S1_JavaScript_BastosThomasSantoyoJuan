@@ -54,7 +54,7 @@
 
     <!-- Vista de usuario (inicialmente oculta) -->
     <div id="vista-usuario" style="display: none;">
-        <div class="user-bg"></div>
+        
 
         <!-- Encabezado con logo y menú de navegación -->
         <header class="f1-header">
@@ -73,6 +73,7 @@
                             <li><a href="#vehiculos" onclick="showSection('vehiculos')">Vehículos</a></li>
                             <li><a href="#pilotos" onclick="showSection('pilotos')">Pilotos</a></li>
                             <li><a href="#circuitos" onclick="showSection('circuitos')">Circuitos</a></li>
+                            <li><a href="#equipos" onclick="showSection('equipos')">Equipos</a></li>
                         </ul>
                     </li>
                     <!-- Link de salida -->
@@ -130,18 +131,44 @@
                     </section>
                 </div>
             </section>
+
+            <section id="equipos" style="display: none;">
+    <div class="section-header">
+        <h2 class="section-title">Equipos</h2>
+        <div class="section-divider"></div>
+    </div>
+    <div class="content-placeholder">
+    </div>
+</section>
         </div>
     </div>
 
     <!-- Vista de administrador (inicialmente oculta) -->
     <div id="vista-admin" style="display: none;">
-        <h1>Vista de Administrador</h1>
+        <div class="admin-header">
+            <div class="logo">
+                <img class="logo-container" src="./img/f1" alt="">
+            </div>
+            <div class="menu">
+                <div class="dropdown">
+                    <button class="dropbtn">Opciones ▼</button>
+                    <div class="dropdown-content">
+                        <a href="#">Vehículos</a>
+                        <a href="#">Circuitos</a>
+                        <a href="#">Pilotos</a>
+                        <a href="#">Equipos</a>
+                    </div>
+                </div>
+                <button class="exit-btn" onclick="volver()">Exit</button>
+            </div>
+        </div>
+
         <div class="contenido-admin">
+            <h1>Vista de Administrador</h1>
             <!-- Aquí irá el contenido exclusivo para administradores -->
         </div>
-        <!-- Botón para volver a la pantalla inicial -->
-        <button onclick="volver()">Volver al inicio</button>
     </div>
+
 </body>
 
 <!-- Archivos de JavaScript -->
@@ -149,5 +176,9 @@
 <script src="./scripts/inicio.js"></script>
 <script src="./scripts/usuario.js"></script>
 <script src="./scripts/administrador.js"></script>
+<script src="./scripts/infoVehiculos.js"></script>
+<script src="./scripts/infoPilotos.js"></script>
+<script src="./scripts/infoCircuitos.js"></script>
+<script src="./scripts/infoEquipos.js"></script>
 
 </html>
