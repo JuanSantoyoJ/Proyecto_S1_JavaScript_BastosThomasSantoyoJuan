@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Función para cargar los datos de pilotos desde la API
   function cargarDatosPilotos() {
-    const API_PILOTOS = "https://682b527ed29df7a95be2f700.mockapi.io/pilotos";
+    const API_PILOTOS = "https://6818a2da5a4b07b9d1d017b8.mockapi.io/prueba/Pilotos";
     
     // Mostrar indicador de carga
     pilotosSection.innerHTML = '<div class="loading">Cargando información de pilotos...</div>';
@@ -54,8 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="piloto-info">
             <h3>${piloto.nombre || 'Sin nombre'} ${piloto.apellido || ''}</h3>
             <p class="equipo"><span>Equipo:</span> ${piloto.equipo || 'No especificado'}</p>
-            <p class="nacionalidad"><span>Nacionalidad:</span> ${piloto.nacionalidad || 'No especificada'}</p>
-            <p class="edad"><span>Edad:</span> ${piloto.edad || 'N/A'}</p>
             
             <div class="stats-container">
               <div class="stat-item">

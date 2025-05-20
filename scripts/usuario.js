@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   // URLs de las APIs
   const API_EQUIPOS = "https://6818a2da5a4b07b9d1d017b8.mockapi.io/prueba/equipos";
-  const API_PILOTOS = "https://682b527ed29df7a95be2f700.mockapi.io/pilotos";
+  const API_PILOTOS = "https://6818a2da5a4b07b9d1d017b8.mockapi.io/prueba/Pilotos";
   const API_CIRCUITOS = "https://682b1d94ab2b5004cb3921b5.mockapi.io/circuitos";
   const API_CARROS = "https://682b1d94ab2b5004cb3921b5.mockapi.io/carros";
 
