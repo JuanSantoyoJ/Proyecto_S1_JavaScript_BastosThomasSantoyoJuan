@@ -153,10 +153,10 @@
                 <div class="dropdown">
                     <button class="dropbtn">Opciones ▼</button>
                     <div class="dropdown-content">
-                        <a href="#ADMINvehiculos">Vehículos</a>
-                        <a href="#">Circuitos</a>
-                        <a href="#">Pilotos</a>
-                        <a href="#">Equipos</a>
+                        <li><a href="#ADMINvehiculos" onclick="showSection('ADMINvehiculos')">Vehículos</a></li>
+                        <li><a href="#ADMINpilotos" onclick="showSection('ADMINpilotos')">Pilotos</a></li>
+                        <li><a href="#ADMINcircuitos" onclick="showSection('ADMINcircuitos')">Circuitos</a></li>
+                        <li><a href="#ADMINequipos" onclick="showSection('ADMINequipos')">Equipos</a></li>
                     </div>
                 </div>
                 <button class="exit-btn" onclick="volver()">Exit</button>
@@ -217,5 +217,8 @@
 <script src="./scripts/infoPilotos.js"></script>
 <script src="./scripts/infoCircuitos.js"></script>
 <script src="./scripts/infoEquipos.js"></script>
-
+<script src="./scripts/circuitos(admin).js"></script>
+<script src="./scripts/vehiculos(admin).js"></script>
+<script src="./scripts/equipos(admin).js"></script>
+<script src="./scripts/pilotos(admin).js"></script>
 </html>

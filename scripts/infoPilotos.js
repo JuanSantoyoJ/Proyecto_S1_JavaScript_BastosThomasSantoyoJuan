@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
     pilotos.forEach(piloto => {
       contenidoHTML += `
         <div class="piloto-card">
-          <div class="piloto-numero">${piloto.numero || '00'}</div>
           <div class="piloto-imagen">
             <img src="${piloto.imagen || './img/default-driver.jpg'}" alt="${piloto.nombre || 'Piloto F1'}">
           </div>
