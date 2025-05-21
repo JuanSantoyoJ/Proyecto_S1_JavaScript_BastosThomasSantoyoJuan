@@ -477,6 +477,7 @@ body {
   background-image: url('../img/fondo_carro.jpg');
   background-size: cover;
   background-position: center;
+  overflow-y: auto;
 }
 
 .admin-header {
@@ -1076,6 +1077,42 @@ body {
   font-size: 0.9rem;
   line-height: 1.5;
   color: #aaaaaa;
+}
+
+.btn-borrar-piloto {
+  background: #e10600;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  margin-top: 15px;
+  font-size: 1rem;
+  font-family: 'ORBITRON';
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-borrar-piloto:hover {
+  background: #b30000;
+}
+
+.btn-borrar-vehiculo,
+.btn-borrar-circuito,
+.btn-borrar-equipo {
+  background: #e10600;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  margin-top: 15px;
+  font-size: 1rem;
+  font-family: 'ORBITRON';
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-borrar-vehiculo:hover,
+.btn-borrar-circuito:hover,
+.btn-borrar-equipo:hover {
+  background: #b30000;
 }
 
 @media (max-width: 768px) {

@@ -38,15 +38,14 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Crear el contenido HTML para mostrar los vehículos
         let contenidoHTML = `
         <h2>Vehículos de F1</h2>
         <div class="vehiculos-grid">
-      `;
+    `;
 
         vehiculos.forEach(vehiculo => {
             contenidoHTML += `
-          <div class="vehiculo-card">
+          <div class="vehiculo-card" data-id="${vehiculo.id}">
             <div class="vehiculo-imagen">
               <img src="${vehiculo.imagen || './img/default-car.jpg'}" alt="${vehiculo.nombre || 'Vehículo F1'}">
             </div>
@@ -79,15 +78,37 @@ document.addEventListener('DOMContentLoaded', function () {
                   <span class="stat-value">${vehiculo.manejo || 0}/100</span>
                 </div>
               </div>
+              <button class="btn-borrar-vehiculo" data-id="${vehiculo.id}">Borrar</button>
             </div>
           </div>
         `;
         });
 
         contenidoHTML += `</div>`;
-
-        // Actualizar el contenido de la sección
         vehiculosSection.innerHTML = contenidoHTML;
+
+        // Listeners para borrar
+        document.querySelectorAll('.btn-borrar-vehiculo').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const vehiculoId = this.getAttribute('data-id');
+                borrarVehiculo(vehiculoId);
+            });
+        });
+    }
+
+    function borrarVehiculo(id) {
+        if (!confirm('¿Estás seguro de que deseas borrar este vehículo?')) return;
+        const API_CARROS = "https://682b1d94ab2b5004cb3921b5.mockapi.io/carros";
+        fetch(`${API_CARROS}/${id}`, {
+            method: 'DELETE'
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('No se pudo borrar el vehículo');
+            cargarDatosVehiculos();
+        })
+        .catch(error => {
+            alert('Error al borrar el vehículo: ' + error.message);
+        });
     }
 
     // Agregar un observador para detectar cuando se muestra la sección de vehículos
@@ -154,15 +175,14 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Crear el contenido HTML para mostrar los vehículos
         let contenidoHTML = `
         <h2>Vehículos de F1</h2>
         <div class="vehiculos-grid">
-      `;
+    `;
 
         vehiculos.forEach(vehiculo => {
             contenidoHTML += `
-          <div class="vehiculo-card">
+          <div class="vehiculo-card" data-id="${vehiculo.id}">
             <div class="vehiculo-imagen">
               <img src="${vehiculo.imagen || './img/default-car.jpg'}" alt="${vehiculo.nombre || 'Vehículo F1'}">
             </div>
@@ -195,15 +215,37 @@ document.addEventListener('DOMContentLoaded', function () {
                   <span class="stat-value">${vehiculo.manejo || 0}/100</span>
                 </div>
               </div>
+              <button class="btn-borrar-vehiculo" data-id="${vehiculo.id}">Borrar</button>
             </div>
           </div>
         `;
         });
 
         contenidoHTML += `</div>`;
-
-        // Actualizar el contenido de la sección
         vehiculosSection.innerHTML = contenidoHTML;
+
+        // Listeners para borrar
+        document.querySelectorAll('.btn-borrar-vehiculo').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const vehiculoId = this.getAttribute('data-id');
+                borrarVehiculo(vehiculoId);
+            });
+        });
+    }
+
+    function borrarVehiculo(id) {
+        if (!confirm('¿Estás seguro de que deseas borrar este vehículo?')) return;
+        const API_CARROS = "https://682b1d94ab2b5004cb3921b5.mockapi.io/carros";
+        fetch(`${API_CARROS}/${id}`, {
+            method: 'DELETE'
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('No se pudo borrar el vehículo');
+            cargarDatosVehiculos();
+        })
+        .catch(error => {
+            alert('Error al borrar el vehículo: ' + error.message);
+        });
     }
 
     // Agregar un observador para detectar cuando se muestra la sección de vehículos

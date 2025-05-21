@@ -37,13 +37,12 @@ document.addEventListener('DOMContentLoaded', function() {
         equiposSection.innerHTML = '<div class="no-data">No hay información disponible sobre equipos.</div>';
         return;
       }
-      
-      // Crear el contenido HTML para mostrar los equipos
+
       let contenidoHTML = `
         <h2>Equipos de F1</h2>
         <div class="equipos-grid">
       `;
-      
+
       equipos.forEach(equipo => {
         // Generar HTML para cada piloto del equipo
         let pilotosHTML = '';
@@ -66,18 +65,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const colorSecundario = equipo.colorSecundario || '#ffffff';
         
         contenidoHTML += `
-          <div class="equipo-card" style="border-top: 5px solid ${colorFondo};">
+          <div class="equipo-card" style="border-top: 5px solid ${colorFondo};" data-id="${equipo.id}">
             <div class="equipo-header" style="background: linear-gradient(to right, ${colorFondo}, ${colorSecundario});">
               <img src="${equipo.logo || './img/default-team.png'}" alt="${equipo.nombre || 'Equipo F1'}" class="equipo-logo">
             </div>
-            
             <div class="equipo-info">
               <h3>${equipo.nombre || 'Sin nombre'}</h3>
               <p class="equipo-pais">
                 <span class="pais-bandera">${equipo.bandera || '🏁'}</span>
                 <span class="pais-nombre">${equipo.paisOrigen || 'País no especificado'}</span>
               </p>
-              
               <div class="equipo-stats">
                 <div class="stat-bloque">
                   <div class="stat-numero">${equipo.campeonatos || '0'}</div>
@@ -92,28 +89,47 @@ document.addEventListener('DOMContentLoaded', function() {
                   <div class="stat-texto">Podios</div>
                 </div>
               </div>
-              
               <div class="equipo-detalles">
                 <p><strong>Director:</strong> ${equipo.director || 'No especificado'}</p>
                 <p><strong>Motor:</strong> ${equipo.motor || 'No especificado'}</p>
                 <p><strong>Sede:</strong> ${equipo.sede || 'No especificada'}</p>
                 <p><strong>Año de Fundación:</strong> ${equipo.fundacion || 'No especificado'}</p>
               </div>
-              
               ${pilotosHTML}
-              
               <div class="equipo-descripcion">
                 <p>${equipo.descripcion || 'No hay descripción disponible para este equipo.'}</p>
               </div>
+              <button class="btn-borrar-equipo" data-id="${equipo.id}">Borrar</button>
             </div>
           </div>
         `;
       });
-      
+
       contenidoHTML += `</div>`;
-      
-      // Actualizar el contenido de la sección
       equiposSection.innerHTML = contenidoHTML;
+
+      // Listeners para borrar
+      document.querySelectorAll('.btn-borrar-equipo').forEach(btn => {
+          btn.addEventListener('click', function() {
+              const equipoId = this.getAttribute('data-id');
+              borrarEquipo(equipoId);
+          });
+      });
+    }
+  
+    function borrarEquipo(id) {
+        if (!confirm('¿Estás seguro de que deseas borrar este equipo?')) return;
+        const API_EQUIPOS = "https://6818a2da5a4b07b9d1d017b8.mockapi.io/prueba/equipos";
+        fetch(`${API_EQUIPOS}/${id}`, {
+            method: 'DELETE'
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('No se pudo borrar el equipo');
+            cargarDatosEquipos();
+        })
+        .catch(error => {
+            alert('Error al borrar el equipo: ' + error.message);
+        });
     }
   
     // Agregar un observador para detectar cuando se muestra la sección de equipos

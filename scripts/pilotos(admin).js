@@ -37,23 +37,21 @@ document.addEventListener('DOMContentLoaded', function() {
         pilotosSection.innerHTML = '<div class="no-data">No hay información disponible sobre pilotos.</div>';
         return;
       }
-      
-      // Crear el contenido HTML para mostrar los pilotos
+
       let contenidoHTML = `
         <h2>Pilotos de F1</h2>
         <div class="pilotos-grid">
       `;
-      
+
       pilotos.forEach(piloto => {
         contenidoHTML += `
-          <div class="piloto-card">
+          <div class="piloto-card" data-id="${piloto.id}">
             <div class="piloto-imagen">
               <img src="${piloto.imagen || './img/default-driver.jpg'}" alt="${piloto.nombre || 'Piloto F1'}">
             </div>
             <div class="piloto-info">
               <h3>${piloto.nombre || 'Sin nombre'} ${piloto.apellido || ''}</h3>
               <p class="equipo"><span>Equipo:</span> ${piloto.equipo || 'No especificado'}</p>
-              
               <div class="stats-container">
                 <div class="stat-item">
                   <div class="stat-value">${piloto.victorias || '0'}</div>
@@ -68,20 +66,43 @@ document.addEventListener('DOMContentLoaded', function() {
                   <div class="stat-label">Puntos</div>
                 </div>
               </div>
-              
               <div class="piloto-ranking">
                 <span class="ranking-label">Posición:</span>
                 <span class="ranking-value">${piloto.posicion || 'N/A'}</span>
               </div>
+              <button class="btn-borrar-piloto" data-id="${piloto.id}">Borrar</button>
             </div>
           </div>
         `;
       });
-      
+
       contenidoHTML += `</div>`;
-      
-      // Actualizar el contenido de la sección
       pilotosSection.innerHTML = contenidoHTML;
+
+      // Agregar listeners a los botones de borrar
+      document.querySelectorAll('.btn-borrar-piloto').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const pilotoId = this.getAttribute('data-id');
+          borrarPiloto(pilotoId);
+        });
+      });
+    }
+  
+    // Función para borrar un piloto
+    function borrarPiloto(id) {
+      if (!confirm('¿Estás seguro de que deseas borrar este piloto?')) return;
+      const API_PILOTOS = "https://6818a2da5a4b07b9d1d017b8.mockapi.io/prueba/Pilotos";
+      fetch(`${API_PILOTOS}/${id}`, {
+        method: 'DELETE'
+      })
+      .then(response => {
+        if (!response.ok) throw new Error('No se pudo borrar el piloto');
+        // Recargar la lista de pilotos
+        cargarDatosPilotos();
+      })
+      .catch(error => {
+        alert('Error al borrar el piloto: ' + error.message);
+      });
     }
   
     // Agregar un observador para detectar cuando se muestra la sección de pilotos

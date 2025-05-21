@@ -38,15 +38,14 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Crear el contenido HTML para mostrar los circuitos
         let contenidoHTML = `
         <h2>Circuitos de F1</h2>
         <div class="circuitos-grid">
-      `;
+    `;
 
         circuitos.forEach(circuito => {
             contenidoHTML += `
-          <div class="circuito-card">
+          <div class="circuito-card" data-id="${circuito.id}">
             <div class="circuito-header">
               <span class="circuito-gp">${circuito.nombreGP || 'Gran Premio'}</span>
               <span class="circuito-fecha">${circuito.fecha || 'Fecha no disponible'}</span>
@@ -60,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 <span class="pais-bandera">${circuito.bandera || '🏁'}</span>
                 <span class="pais-nombre">${circuito.pais || 'País no especificado'}</span>
               </div>
-              
               <div class="circuito-datos">
                 <div class="dato">
                   <div class="dato-valor">${circuito.longitud || '0'} km</div>
@@ -75,23 +73,43 @@ document.addEventListener('DOMContentLoaded', function () {
                   <div class="dato-label">Vueltas</div>
                 </div>
               </div>
-              
               <div class="circuito-record">
                 <div class="record-title">Vuelta Récord</div>
                 <div class="record-tiempo">${circuito.recordVuelta || 'No disponible'}</div>
                 <div class="record-piloto">${circuito.recordPiloto || 'N/A'} (${circuito.recordAno || 'N/A'})</div>
               </div>
-              
               <p class="circuito-descripcion">${circuito.descripcion || 'No hay descripción disponible para este circuito.'}</p>
+              <button class="btn-borrar-circuito" data-id="${circuito.id}">Borrar</button>
             </div>
           </div>
         `;
         });
 
         contenidoHTML += `</div>`;
-
-        // Actualizar el contenido de la sección
         circuitosSection.innerHTML = contenidoHTML;
+
+        // Listeners para borrar
+        document.querySelectorAll('.btn-borrar-circuito').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const circuitoId = this.getAttribute('data-id');
+                borrarCircuito(circuitoId);
+            });
+        });
+    }
+
+    function borrarCircuito(id) {
+        if (!confirm('¿Estás seguro de que deseas borrar este circuito?')) return;
+        const API_CIRCUITOS = "https://682b1d94ab2b5004cb3921b5.mockapi.io/circuitos";
+        fetch(`${API_CIRCUITOS}/${id}`, {
+            method: 'DELETE'
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('No se pudo borrar el circuito');
+            cargarDatosCircuitos();
+        })
+        .catch(error => {
+            alert('Error al borrar el circuito: ' + error.message);
+        });
     }
 
     // Agregar un observador para detectar cuando se muestra la sección de circuitos
