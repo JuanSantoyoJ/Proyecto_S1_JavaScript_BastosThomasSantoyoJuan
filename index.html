@@ -157,6 +157,10 @@
                         <li><a href="#ADMINpilotos" onclick="showSection('ADMINpilotos')">Pilotos</a></li>
                         <li><a href="#ADMINcircuitos" onclick="showSection('ADMINcircuitos')">Circuitos</a></li>
                         <li><a href="#ADMINequipos" onclick="showSection('ADMINequipos')">Equipos</a></li>
+                        <li><button class="btn-agregar-dropdown" data-tipo="vehiculo">AGvehiculos</button></li>
+                        <li><button class="btn-agregar-dropdown" data-tipo="piloto">AGpilotos</button></li>
+                        <li><button class="btn-agregar-dropdown" data-tipo="circuito">AGcircuitos</button></li>
+                        <li><button class="btn-agregar-dropdown" data-tipo="equipo">AGequipos</button></li>
                     </div>
                 </div>
                 <button class="exit-btn" onclick="volver()">Exit</button>
@@ -206,6 +210,14 @@
         </div>
     </div>
 
+    <div id="modalAgregar" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close-modal" id="cerrarModalAgregar">&times;</span>
+            <h2 id="modalTitulo"></h2>
+            <form id="formAgregar"></form>
+        </div>
+    </div>
+
 </body>
 
 <!-- Archivos de JavaScript -->
@@ -221,4 +233,5 @@
 <script src="./scripts/vehiculos(admin).js"></script>
 <script src="./scripts/equipos(admin).js"></script>
 <script src="./scripts/pilotos(admin).js"></script>
+<script src="./scripts/adminAgregar.js"></script>
 </html>
