@@ -1,139 +1,140 @@
 @font-face {
-    font-family: 'ORBITRON';
-    src: url('../fonts/Orbitron-Bold.ttf') format('truetype');
-    font-style: normal;
-    font-weight: normal;
+  font-family: 'ORBITRON';
+  src: url('../fonts/Orbitron-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
 }
 
 * {
-    font-family: 'ORBITRON';
+  font-family: 'ORBITRON';
 }
 
 /* Fondo general */
 body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #ff073a, #00b0ff);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto; /* Cambiado de 'hidden' a 'auto' */
-    overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff073a, #00b0ff);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  /* Cambiado de 'hidden' a 'auto' */
+  overflow-x: hidden;
 }
 
 /* Contenedor del visor 3D */
 .sketchfab-embed-wrapper {
-    width: 100%;
-    max-width: 1920px;
-    box-shadow: 0 0 30px rgba(255, 0, 255, 0.4);
-    border-radius: 15px;
-    overflow: hidden;
-    z-index: -999;
-    filter: saturate(1.5);
+  width: 100%;
+  max-width: 1920px;
+  box-shadow: 0 0 30px rgba(255, 0, 255, 0.4);
+  border-radius: 15px;
+  overflow: hidden;
+  z-index: -999;
+  filter: saturate(1.5);
 }
 
 .botonInicio {
-    z-index: 10;
-    /* Mayor z-index para estar por encima del logo */
-    position: absolute;
-    top: 70%;
-    width: 10vw;
-    height: 5vh;
-    border-radius: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    /* Centra horizontalmente */
-    background-color: rgba(255, 255, 255, 0.8);
-    /* Fondo semi-transparente */
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  z-index: 10;
+  /* Mayor z-index para estar por encima del logo */
+  position: absolute;
+  top: 70%;
+  width: 10vw;
+  height: 5vh;
+  border-radius: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* Centra horizontalmente */
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Fondo semi-transparente */
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
 }
 
 .f1 {
-    z-index: 0;
-    /* Menor z-index para estar detrás del botón */
-    position: absolute;
-    filter: saturate(0.2);
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    /* Centra el logo */
-    max-width: 50%;
-    opacity: 0.7;
-    /* Semi-transparente */
+  z-index: 0;
+  /* Menor z-index para estar detrás del botón */
+  position: absolute;
+  filter: saturate(0.2);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* Centra el logo */
+  max-width: 50%;
+  opacity: 0.7;
+  /* Semi-transparente */
 }
 
 .boton {
-    z-index: 11;
-    position: relative;
-    /* Cambiado de absolute a relative */
-    display: block;
-    text-align: center;
-    width: 100%;
+  z-index: 11;
+  position: relative;
+  /* Cambiado de absolute a relative */
+  display: block;
+  text-align: center;
+  width: 100%;
 }
 
 /* El resto de los estilos se mantienen igual */
 .piloto {
-    z-index: 12;
-    position: relative;
-    top: 50%;
-    right: 40%;
-    width: 30vw;
-    border-radius: 20%;
+  z-index: 12;
+  position: relative;
+  top: 50%;
+  right: 40%;
+  width: 30vw;
+  border-radius: 20%;
 
 }
 
 .administrador {
-    z-index: 12;
-    position: absolute;
-    bottom: 0%;
-    left: 40%;
-    width: 30vw;
-    border-radius: 20%;
+  z-index: 12;
+  position: absolute;
+  bottom: 0%;
+  left: 40%;
+  width: 30vw;
+  border-radius: 20%;
 }
 
 .botonAdministrador {
-    z-index: 12;
-    position: relative;
+  z-index: 12;
+  position: relative;
 
 }
 
 .botonUsuario {
-    z-index: 13;
-    position: relative;
-    right: 100%;
+  z-index: 13;
+  position: relative;
+  right: 100%;
 }
 
 /* Add these styles to your existing CSS */
 
 .botonVolver {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 20px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-    font-family: 'ORBITRON';
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  font-family: 'ORBITRON';
 }
 
 #vista-usuario,
 #vista-admin {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
 
@@ -142,332 +143,334 @@ body {
 
 /* Header styles */
 .f1-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(255, 0, 0, 0.5);
-    border-bottom: 2px solid #e10600;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(255, 0, 0, 0.5);
+  border-bottom: 2px solid #e10600;
 }
 
 .logo-container {
-    width: 80px;
+  width: 80px;
 }
 
 .header-logo {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .main-nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .main-nav li {
-    margin: 0 20px;
+  margin: 0 20px;
 }
 
 .main-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-family: 'ORBITRON';
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'ORBITRON';
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
 }
 
 .main-nav a:hover {
-    color: #e10600;
+  color: #e10600;
 }
 
 .exit-link {
-    color: #e10600 !important;
-    font-weight: bold;
+  color: #e10600 !important;
+  font-weight: bold;
 }
 
 .content-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../img/fondo_carro.jpg');
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-    filter: none; /* Quitar el brightness(0.7) */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/fondo_carro.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  filter: none;
+  /* Quitar el brightness(0.7) */
 }
 
 
 /* Content sections */
 #vista-usuario {
-    margin-top: 50px;
-    width: 100%;
-    min-height: 100vh;
-    position: relative;
-    overflow-y: auto; /* Permitir scroll vertical */
+  margin-top: 50px;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow-y: auto;
+  /* Permitir scroll vertical */
 }
 
 .contenido-usuario {
 
-    padding: 50px;
-    margin-top: 40px;
+  padding: 50px;
+  margin-top: 40px;
 }
 
 /* Ajuste para contenedores de secciones */
 .contenido-usuario section {
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 1px solid rgba(225, 6, 0, 0.3);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(225, 6, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
 .contenido-usuario h2 {
-    color: #e10600;
-    font-family: 'ORBITRON';
-    border-bottom: 1px solid #e10600;
-    padding-bottom: 10px;
+  color: #e10600;
+  font-family: 'ORBITRON';
+  border-bottom: 1px solid #e10600;
+  padding-bottom: 10px;
 }
 
 /* Estilos para la selección de usuarios */
 #nuevo-contenido {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(135deg, #ff073a, #00b0ff);
-    z-index: 100;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff073a, #00b0ff);
+  z-index: 100;
 }
 
 .seleccion-usuario {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 80vh;
-    padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+  padding: 20px;
 }
 
 
 .section-title {
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    border-bottom: 2px solid #e10600;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  border-bottom: 2px solid #e10600;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .usuario-opcion,
 .admin-opcion {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
 }
 
 .piloto,
 .administrador {
-    width: 100%;
-    max-width: 350px;
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
-    margin-bottom: 30px;
-    transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 350px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+  margin-bottom: 30px;
+  transition: transform 0.3s ease;
 }
 
 .piloto:hover,
 .administrador:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .botonUsuario,
 .botonAdministrador {
-    padding: 12px 30px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  padding: 12px 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .botonUsuario {
-    background-color: #ffd700;
-    /* Amarillo F1 */
-    color: #000;
+  background-color: #ffd700;
+  /* Amarillo F1 */
+  color: #000;
 }
 
 .botonAdministrador {
-    background-color: #e10600;
-    /* Rojo F1 */
-    color: #fff;
+  background-color: #e10600;
+  /* Rojo F1 */
+  color: #fff;
 }
 
 .botonUsuario:hover,
 .botonAdministrador:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 .botonVolver {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 30px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    text-transform: uppercase;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 30px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
 }
 
 /* Estilos específicos para centrar imágenes y botones en la pantalla de selección */
 #nuevo-contenido .seleccion-usuario {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #nuevo-contenido .usuario-opcion,
 #nuevo-contenido .admin-opcion {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 5%;
 }
 
 #nuevo-contenido .piloto,
 #nuevo-contenido .administrador {
-    position: static;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
+  position: static;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
 }
 
 #nuevo-contenido .botonUsuario,
 #nuevo-contenido .botonAdministrador {
-    position: static;
-    right: auto;
-    margin-top: 20px;
+  position: static;
+  right: auto;
+  margin-top: 20px;
 }
 
 /* Ajustes para la barra de navegación */
 .main-nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-    /* Centra los elementos horizontalmente */
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  /* Centra los elementos horizontalmente */
 }
 
 .main-nav li {
-    margin: 0 40px;
-    /* Aumenta el espacio entre elementos */
-    padding: 10px 0;
-    /* Añade espacio vertical */
+  margin: 0 40px;
+  /* Aumenta el espacio entre elementos */
+  padding: 10px 0;
+  /* Añade espacio vertical */
 }
 
 .main-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-family: 'ORBITRON';
-    font-size: 1.2rem;
-    /* Aumenta ligeramente el tamaño de fuente */
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
-    padding: 5px 10px;
-    /* Añade padding alrededor del texto */
+  color: #fff;
+  text-decoration: none;
+  font-family: 'ORBITRON';
+  font-size: 1.2rem;
+  /* Aumenta ligeramente el tamaño de fuente */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  padding: 5px 10px;
+  /* Añade padding alrededor del texto */
 }
 
 .main-nav a:hover {
-    color: #e10600;
-    background-color: rgba(255, 255, 255, 0.1);
-    /* Efecto hover sutil */
-    border-radius: 5px;
+  color: #e10600;
+  background-color: rgba(255, 255, 255, 0.1);
+  /* Efecto hover sutil */
+  border-radius: 5px;
 }
 
 .exit-link {
-    color: #e10600 !important;
-    font-weight: bold;
+  color: #e10600 !important;
+  font-weight: bold;
 }
 
 
 /* Estilos para el dropdown */
 .dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #000;
-    border: 1px solid #e10600;
-    border-top: none;
-    width: 200px;
-    z-index: 1000;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-    flex-direction: column;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #000;
+  border: 1px solid #e10600;
+  border-top: none;
+  width: 200px;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  flex-direction: column;
 }
 
 .dropdown:hover .dropdown-menu {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .dropdown-menu li {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .dropdown-menu a {
-    display: block;
-    padding: 12px 20px;
-    color: #fff !important;
-    text-decoration: none;
-    transition: all 0.3s;
-    border-left: 3px solid transparent;
+  display: block;
+  padding: 12px 20px;
+  color: #fff !important;
+  text-decoration: none;
+  transition: all 0.3s;
+  border-left: 3px solid transparent;
 }
 
 .dropdown-menu a:hover {
-    background-color: #e10600;
-    border-left: 3px solid #fff;
+  background-color: #e10600;
+  border-left: 3px solid #fff;
 }
 
 /* Ajuste para el enlace principal */
 .dropdown-toggle::after {
-    content: " ▼";
-    font-size: 0.8em;
+  content: " ▼";
+  font-size: 0.8em;
 }
 
 #vista-admin {
@@ -483,62 +486,64 @@ body {
 }
 
 .admin-header {
-    background-color: #000;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 3px solid red;
+  background-color: #000;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid red;
 }
 
 .logo {
-    font-weight: bold;
-    font-size: 18px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .menu {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .exit-btn {
-    background: none;
-    border: none;
-    color: red;
-    font-size: 16px;
-    cursor: pointer;
+  background: none;
+  border: none;
+  color: red;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .dropbtn {
-    background-color: transparent;
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
 }
-.dropbtn:hover, .dropbtn:focus {
-    color: #e10600;
-    outline: none;
+
+.dropbtn:hover,
+.dropbtn:focus {
+  color: #e10600;
+  outline: none;
 }
 
 .dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #111;
-    min-width: 160px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    z-index: 1;
-    right: 0;
-    opacity: 0;
-    transform: translateY(10px) scale(0.95);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    border: solid 1px #e10600;
+  display: none;
+  position: absolute;
+  background-color: #111;
+  min-width: 160px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  right: 0;
+  opacity: 0;
+  transform: translateY(10px) scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border: solid 1px #e10600;
 }
 
 .dropdown-content a {
@@ -549,19 +554,19 @@ body {
 }
 
 .dropdown-content a:hover {
-    background-color: #e10600;
-    border-left: 4px solid #fff;
+  background-color: #e10600;
+  border-left: 4px solid #fff;
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
-    opacity: 1;
-    transform: translateY(0) scale(1);
+  display: block;
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .contenido-admin {
-    flex: 1;
-    padding: 20px;
+  flex: 1;
+  padding: 20px;
 }
 
 /* Estilos para la sección de vehículos */
@@ -634,7 +639,9 @@ body {
   margin-top: 2px;
 }
 
-.loading, .error-message, .no-data {
+.loading,
+.error-message,
+.no-data {
   text-align: center;
   padding: 30px;
   font-size: 1.2rem;
@@ -1099,6 +1106,7 @@ body {
   cursor: pointer;
   transition: background 0.2s;
 }
+
 .btn-borrar-piloto:hover {
   background: #b30000;
 }
@@ -1117,6 +1125,7 @@ body {
   cursor: pointer;
   transition: background 0.2s;
 }
+
 .btn-borrar-vehiculo:hover,
 .btn-borrar-circuito:hover,
 .btn-borrar-equipo:hover {
@@ -1137,16 +1146,23 @@ body {
   text-align: left;
   transition: background 0.2s;
 }
+
 .btn-agregar-dropdown:hover {
   background: #158a00;
 }
+
 .modal {
   position: fixed;
   z-index: 9999;
-  left: 0; top: 0;
-  width: 100vw; height: 100vh;
-  display: flex; align-items: center; justify-content: center;
-  overflow: auto; /* Permite scroll si el modal es muy grande */
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  /* Permite scroll si el modal es muy grande */
 }
 
 .modal-content {
@@ -1163,8 +1179,10 @@ body {
   box-shadow: 0 0 32px 0 #e10600cc;
   border: 2px solid #e10600;
   font-family: 'ORBITRON', Arial, sans-serif;
-  overflow-x: auto;   /* Scroll horizontal si es necesario */
-  overflow-y: auto;   /* Scroll vertical si es necesario */
+  overflow-x: auto;
+  /* Scroll horizontal si es necesario */
+  overflow-y: auto;
+  /* Scroll vertical si es necesario */
 }
 
 /* Responsive para pantallas pequeñas */
@@ -1176,18 +1194,21 @@ body {
     max-height: 98vh;
     font-size: 0.95rem;
   }
+
   #formAgregar label,
   #formAgregar input,
   #formAgregar textarea {
     font-size: 0.95rem;
   }
 }
+
 .dropdown-content li {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.guardarJS{
+
+.guardarJS {
   background: #e10600;
   color: #fff;
   border: none;
@@ -1197,4 +1218,491 @@ body {
   font-size: 1rem;
   font-family: 'ORBITRON';
   cursor: pointer;
+}
+
+/* Media Queries para hacer el sitio responsive */
+
+/* Para dispositivos móviles pequeños */
+@media screen and (max-width: 480px) {
+
+  /* Ajustes generales */
+  body {
+    padding: 10px;
+  }
+
+  /* Ajustes para la barra de navegación */
+  .f1-header {
+    flex-direction: column;
+    padding: 5px;
+  }
+
+  .logo-container {
+    width: 60px;
+    margin-bottom: 10px;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-nav li {
+    margin: 5px 0;
+  }
+
+  /* Ajustes para la pantalla de selección */
+  .seleccion-usuario {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .usuario-opcion,
+  .admin-opcion {
+    width: 90%;
+    margin: 15px 0;
+  }
+
+  .piloto,
+  .administrador {
+    max-width: 200px;
+  }
+
+  /* Ajustes para grids */
+  .vehiculos-grid,
+  .pilotos-grid,
+  .circuitos-grid,
+  .equipos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Ajustes para tarjetas */
+  .vehiculo-card,
+  .piloto-card,
+  .circuito-card,
+  .equipo-card {
+    margin: 0 auto;
+    width: 95%;
+  }
+
+  /* Ajustes para el modal */
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  /* Botones */
+  .botonUsuario,
+  .botonAdministrador,
+  .btn-borrar-piloto,
+  .btn-borrar-vehiculo,
+  .btn-borrar-circuito,
+  .btn-borrar-equipo,
+  .btn-agregar-dropdown {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Para tablets y dispositivos móviles medianos */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+  /* Ajustes generales */
+  .contenido-usuario {
+    padding: 20px;
+  }
+
+  /* Ajustes para la barra de navegación */
+  .main-nav li {
+    margin: 0 15px;
+  }
+
+  .main-nav a {
+    font-size: 1rem;
+  }
+
+  /* Ajustes para grids */
+  .vehiculos-grid,
+  .pilotos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .circuitos-grid,
+  .equipos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Ajustes para el modal */
+  .modal-content {
+    width: 80%;
+  }
+
+  /* Ajustes para la pantalla de selección */
+  .piloto,
+  .administrador {
+    max-width: 250px;
+  }
+}
+
+/* Para tablets horizontales y pantallas pequeñas */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+  /* Ajustes generales */
+  .contenido-usuario {
+    padding: 30px;
+  }
+
+  /* Ajustes para grids */
+  .vehiculos-grid,
+  .pilotos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .circuitos-grid,
+  .equipos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Ajustes para el modal */
+  .modal-content {
+    width: 70%;
+  }
+}
+
+/* Para pantallas medianas */
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+
+  /* Ajustes para grids */
+  .vehiculos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pilotos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .circuitos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .equipos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Ajustes para dropdown en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .dropdown-menu {
+    width: 100%;
+    position: static;
+    box-shadow: none;
+    margin-top: 5px;
+  }
+
+  .dropdown {
+    width: 100%;
+    text-align: center;
+  }
+
+  .dropdown-toggle::after {
+    margin-left: 10px;
+  }
+
+  /* Ajustes para administrador */
+  .admin-header {
+    flex-direction: column;
+  }
+
+  .menu {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Ajustes para estadísticas */
+  .stats-container {
+    flex-direction: column;
+  }
+
+  .stat-item {
+    margin-bottom: 10px;
+  }
+
+  .circuito-datos {
+    flex-direction: column;
+  }
+
+  .dato {
+    margin-bottom: 10px;
+  }
+
+  .equipo-stats {
+    flex-direction: column;
+  }
+
+  .stat-bloque {
+    margin-bottom: 10px;
+  }
+}
+
+/* Ajustes para orientación landscape en móviles */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .seleccion-usuario {
+    flex-direction: row;
+    justify-content: space-around;
+    height: auto;
+    padding: 10px;
+  }
+
+  .piloto,
+  .administrador {
+    max-width: 150px;
+    height: 150px;
+  }
+
+  .f1-header {
+    padding: 5px 10px;
+  }
+
+  /* Ajustar altura del modal para evitar scrolling excesivo */
+  .modal-content {
+    height: 90vh;
+    max-height: 90vh;
+  }
+}
+
+/* Ajustes para pantallas de alta resolución */
+@media screen and (min-width: 1367px) {
+  .contenido-usuario {
+    max-width: 1600px;
+    margin: 40px auto;
+  }
+
+  .vehiculos-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .pilotos-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .circuitos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .equipos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Ajustes para tamaños de fuente responsive */
+@media screen and (max-width: 480px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .vehiculo-info h3,
+  .piloto-info h3,
+  .circuito-info h3,
+  .equipo-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .stat-value,
+  .dato-valor,
+  .stat-numero {
+    font-size: 1.2rem;
+  }
+}
+
+/* Ajustes para compatibilidad con dispositivos antiguos */
+@supports not (display: grid) {
+
+  .vehiculos-grid,
+  .pilotos-grid,
+  .circuitos-grid,
+  .equipos-grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .vehiculo-card,
+  .piloto-card,
+  .circuito-card,
+  .equipo-card {
+    flex: 0 0 calc(50% - 20px);
+    margin: 10px;
+  }
+
+  @media screen and (max-width: 768px) {
+
+    .vehiculo-card,
+    .piloto-card,
+    .circuito-card,
+    .equipo-card {
+      flex: 0 0 100%;
+    }
+  }
+}
+
+/* Ajustes de accesibilidad para contraste y tamaño de toque */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Optimización para dispositivos de pantalla táctil */
+@media (hover: none) {
+
+  .botonUsuario,
+  .botonAdministrador,
+  .btn-borrar-piloto,
+  .btn-borrar-vehiculo,
+  .btn-borrar-circuito,
+  .btn-borrar-equipo,
+  .btn-agregar-dropdown {
+    padding: 12px 20px;
+    /* Botones más grandes para tocar */
+  }
+
+  .main-nav a {
+    padding: 10px 15px;
+  }
+
+  .dropdown-menu a {
+    padding: 15px 20px;
+  }
+}
+
+/* Actualización para hacer las imágenes de vehículos más grandes */
+.vehiculo-imagen {
+  height: 300px;
+  /* Aumento de altura (era 180px originalmente) */
+  overflow: hidden;
+  position: relative;
+}
+
+.vehiculo-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+/* Efecto hover para las imágenes */
+.vehiculo-card:hover .vehiculo-imagen img {
+  transform: scale(1.05);
+}
+
+/* Ajustes responsivos para diferentes tamaños de pantalla */
+@media screen and (max-width: 768px) {
+  .vehiculo-imagen {
+    height: 250px;
+    /* Altura un poco menor para tablets */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .vehiculo-imagen {
+    height: 220px;
+    /* Altura adaptada para móviles */
+  }
+}
+
+
+/* Actualización para hacer las imágenes de pilotos más grandes */
+.piloto-imagen {
+  height: 300px; /* Aumento de altura (era 180px originalmente) */
+  overflow: hidden;
+  position: relative;
+}
+
+.piloto-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+/* Efecto hover para las imágenes */
+.piloto-card:hover .piloto-imagen img {
+  transform: scale(1.05);
+}
+
+/* Ajustes responsivos para diferentes tamaños de pantalla */
+@media screen and (max-width: 768px) {
+  .piloto-imagen {
+    height: 250px; /* Altura un poco menor para tablets */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .piloto-imagen {
+    height: 220px; /* Altura adaptada para móviles */
+  }
+}
+
+/* Actualización para hacer las imágenes de pilotos más grandes */
+.equipo-imagen {
+  height: 300px; /* Aumento de altura (era 180px originalmente) */
+  overflow: hidden;
+  position: relative;
+}
+
+.equipo-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+/* Efecto hover para las imágenes */
+.equipo-card:hover .equipo-imagen img {
+  transform: scale(1.05);
+}
+
+/* Ajustes responsivos para diferentes tamaños de pantalla */
+@media screen and (max-width: 768px) {
+  .equipo-imagen {
+    height: 250px; /* Altura un poco menor para tablets */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .equipo-imagen {
+    height: 220px; /* Altura adaptada para móviles */
+  }
+}
+
+/* Actualización para hacer las imágenes de pilotos más grandes */
+.circuito-imagen {
+  height: 300px; /* Aumento de altura (era 180px originalmente) */
+  overflow: hidden;
+  position: relative;
+}
+
+.circuito-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+/* Efecto hover para las imágenes */
+.circuito-card:hover .circuito-imagen img {
+  transform: scale(1.05);
+}
+
+/* Ajustes responsivos para diferentes tamaños de pantalla */
+@media screen and (max-width: 768px) {
+  .circuito-imagen {
+    height: 250px; /* Altura un poco menor para tablets */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .circuito-imagen {
+    height: 220px; /* Altura adaptada para móviles */
+  }
 }
