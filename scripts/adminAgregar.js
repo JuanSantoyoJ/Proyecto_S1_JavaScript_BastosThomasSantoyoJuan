@@ -44,9 +44,6 @@ document.addEventListener('DOMContentLoaded', function () {
       { name: 'motor', label: 'Motor', type: 'text', required: false },
       { name: 'sede', label: 'Sede', type: 'text', required: false },
       { name: 'fundacion', label: 'Año de Fundación', type: 'number', required: false },
-      { name: 'colorPrincipal', label: 'Color Principal (hex)', type: 'text', required: false },
-      { name: 'colorSecundario', label: 'Color Secundario (hex)', type: 'text', required: false },
-      { name: 'logo', label: 'URL Logo', type: 'text', required: false },
       { name: 'descripcion', label: 'Descripción', type: 'textarea', required: false }
     ],
     circuito: [

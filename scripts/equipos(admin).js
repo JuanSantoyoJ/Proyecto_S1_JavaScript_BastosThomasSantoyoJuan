@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Función para cargar los datos de equipos desde la API
     function cargarDatosEquipos() {
-      const API_EQUIPOS = "https://6818a2da5a4b07b9d1d017b8.mockapi.io/prueba/equipos";
+      const API_EQUIPOS = "https://6818a2da5a4b07xb9d1d017b8.mockapi.io/prueba/equipos";
       
       // Mostrar indicador de carga
       equiposSection.innerHTML = '<div class="loading">Cargando información de equipos...</div>';
