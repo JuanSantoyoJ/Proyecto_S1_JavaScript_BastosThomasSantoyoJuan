@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Referencias a elementos
     const pilotosSection = document.getElementById('ADMINpilotos');
+    const imagenPiloto = document.getElementsByClassName('piloto-imagen')
     
     // Función para cargar los datos de pilotos desde la API
     function cargarDatosPilotos() {
@@ -42,9 +43,13 @@ document.addEventListener('DOMContentLoaded', function() {
         <h2>Pilotos de F1</h2>
         <div class="pilotos-grid">
       `;
-
+    
       pilotos.forEach(piloto => {
+
+
+        
         contenidoHTML += `
+
           <div class="piloto-card" data-id="${piloto.id}">
             <div class="piloto-imagen">
               <img src="${piloto.imagen || './img/default-driver.jpg'}" alt="${piloto.nombre || 'Piloto F1'}">
@@ -75,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
         `;
       });
+
 
       contenidoHTML += `</div>`;
       pilotosSection.innerHTML = contenidoHTML;
